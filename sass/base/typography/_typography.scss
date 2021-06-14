@@ -10,5 +10,104 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+$red: #640D14;
+$blue: #0A1128;
+$pink: #A05F5D;
+$white: #FFFFFF;
+$green: #3A5A40;
+
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+$colors: ( red, #640D14 ),
+	( blue, #0A1128 ),
+	( pink, #A05F5D ),
+	( white, #FFFFFF ),
+	( black, #000000 ),
+	( green, #3A5A40 );
+
+
+/* Color Options
+--------------------------------------------- */
+
+@each $name, $color in $colors {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+
+
+/* Font Options
+--------------------------------------------- */
+
+@font-face {
+	font-family: edwardian-script;
+	src: url(/wp-content/themes/rebeccaadamwed/assets/ITCEDSCR.TTF); 
+}
+
+@font-face {
+	font-family: high-tower-text;
+	src: url(/wp-content/themes/rebeccaadamwed/assets/htowert.ttf); 
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: edwardian-script;
+	font-weight: 400;
+	margin-top: 0;
+}
+
+h1, .h1 {
+	font-size: 80px;
+}
+
+h2, .h2 {
+	font-size: 50px;
+}
+
+h3, .h3 {
+	font-size: 45px;
+}
+
+p, a {
+	font-family: high-tower-text;
+	@include large {
+		font-size: 20px;
+	}
+}
+
+.wp-block-button.hollow.white .wp-block-button__link {
+	border: 2px solid $white;
+	color: $white;
+}
+
+.wp-block-button .wp-block-button__link {
+	border: 1px solid black;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// .wp-block-button.elaborate .wp-block-button__link {
+// 	position: relative;
+// 	z-index: 2;
+// 	background-color: transparent;
+// 	&:after {
+// 		content: "";
+// 		background-image: url(/wp-content/themes/rebeccaadamwed/assets/images/floral_0043_frame.png);
+// 		height: 260px;
+// 		width: 200px;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		z-index: 9;
+// 		background-size: cover;
+// 		transform: rotate(90deg);
+// 	}
+// }
+
 @import "headings";
 @import "copy";

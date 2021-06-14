@@ -184,3 +184,45 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+
+// Setting up color palette
+function color_setup() {
+	// Disable Custom Colors
+	add_theme_support( 'disable-custom-colors' );
+  
+	// Editor Color Palette
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => __( 'Green', 'ea-starter' ),
+			'slug'  => 'green',
+			'color'	=> '#3A5A40',
+		),
+		array(
+			'name'  => __( 'White', 'ea-starter' ),
+			'slug'  => 'white',
+			'color' => '#FFFFFF',
+		),
+		array(
+			'name'  => __( 'Black', 'ea-starter' ),
+			'slug'  => 'black',
+			'color' => '#000000',
+		),
+		array(
+			'name'  => __( 'Pink', 'ea-starter' ),
+			'slug'  => 'pink',
+			'color' => '#A05F5D',
+		),
+		array(
+			'name'	=> __( 'Red', 'ea-starter' ),
+			'slug'	=> 'red',
+			'color'	=> '#640D14',
+		),
+		array(
+			'name'	=> __( 'Blue', 'ea-starter' ),
+			'slug'	=> 'blue',
+			'color'	=> '#0A1128',
+		),
+	) );
+}
+add_action( 'after_setup_theme', 'color_setup' );
