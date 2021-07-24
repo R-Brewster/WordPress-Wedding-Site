@@ -483,17 +483,46 @@ p, a {
 	}
 }
 
+.margin-bottom-0 {
+	margin-bottom: 0;
+}
+
 .wp-block-button.hollow.white .wp-block-button__link {
 	border: 2px solid #FFFFFF;
 	color: #FFFFFF;
 }
 
+.wp-block-button {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.wp-block-button.is-style-fill {
+	border-color: white;
+}
+
+.wp-block-button.is-style-fill .wp-block-button__link {
+	border: 1px solid white;
+}
+
 .wp-block-button .wp-block-button__link {
 	border: 1px solid black;
+	position: relative;
+	padding: 10px 20px;
+	min-width: 150px;
+	border-radius: 0;
+	z-index: 2;
+	transition: all 0.35s ease-in-out;
 }
 
 .wp-block-button .wp-block-button__link:hover {
 	text-decoration: underline;
+	background-color: #640D14;
+	color: white;
+}
+
+.wp-block-button .wp-block-button__link:hover:after {
+	opacity: 0.25;
 }
 
 h1,
@@ -849,23 +878,47 @@ body.home #primary .entry-header {
 	display: none;
 }
 
-.fp-location {
-	padding: 50px;
+.damask-bg {
+	position: relative;
 }
 
-.fp-location .text-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.damask-bg:after {
+	content: "";
+	background-image: url("/wp-content/themes/rebeccaadamwed/assets/images/whitedamask_0017_w.png");
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.1;
+	background-size: contain;
+	background-repeat: repeat;
 }
 
-.fp-location .text-content h2, .fp-location .text-content h3, .fp-location .text-content h4 {
+.damask-bg-2 {
+	position: relative;
+}
+
+.damask-bg-2:after {
+	content: "";
+	background-image: url("/wp-content/themes/rebeccaadamwed/assets/images/whitedamask_0002_w_blue.jpg");
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.1;
+	background-size: 800px;
+	background-repeat: repeat;
+	z-index: 12;
+}
+
+.fp-heading {
 	position: relative;
 	margin-bottom: 80px;
 }
 
-.fp-location .text-content h2:after, .fp-location .text-content h3:after, .fp-location .text-content h4:after {
+.fp-heading:after {
 	content: "";
 	background-image: url(/wp-content/themes/rebeccaadamwed/assets/images/vines-03-small.png);
 	width: 200px;
@@ -880,14 +933,192 @@ body.home #primary .entry-header {
 	top: auto;
 }
 
-.fp-location .has-frame {
-	position: relative;
-	display: flex;
-	justify-content: flex-end;
+.fp-heading.white:after {
+	background-image: url(/wp-content/themes/rebeccaadamwed/assets/images/vines-03-small-white.png);
 }
 
-.fp-location .has-frame figure image {
-	max-width: 600px;
+.fp-banner {
+	min-height: 800px;
+	height: 100vh;
+	position: relative;
+}
+
+.fp-location {
+	padding: 100px 50px;
+	box-shadow: inset 0px 0px 20px black;
+	position: relative;
+}
+
+.fp-location .wp-block-columns {
+	margin-bottom: 0;
+}
+
+.fp-location .text-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.fp-details {
+	position: relative;
+	overflow: hidden;
+}
+
+.fp-details .wp-block-columns {
+	margin-bottom: 0;
+}
+
+.fp-details .wp-block-columns .wp-block-column {
+	margin-left: 0;
+}
+
+.fp-details .wp-block-columns .left-image {
+	box-shadow: 9px 1px 20px black;
+}
+
+.fp-details .wp-block-columns .left-image figure {
+	margin: 0;
+	position: relative;
+	z-index: 25;
+	min-height: 800px;
+	line-height: 0;
+}
+
+.fp-details .wp-block-columns .left-image figure img {
+	width: 100%;
+	height: 100%;
+	min-height: 800px;
+	object-fit: cover;
+	object-position: right;
+}
+
+.fp-details .wp-block-columns .text-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.fp-details .wp-block-columns .text-content .wp-block-buttons {
+	position: relative;
+	z-index: 30;
+}
+
+.fp-travel {
+	padding: 100px 50px;
+	box-shadow: inset 0px 0px 20px black;
+}
+
+.fp-travel .fp-heading {
+	margin-bottom: 130px;
+}
+
+.fp-travel .travel-columns {
+	max-width: 100%;
+	margin: auto;
+}
+
+@media screen and (min-width: 1600px) {
+	.fp-travel .travel-columns {
+		max-width: 80%;
+	}
+}
+
+.fp-travel .travel-columns .wp-block-column {
+	position: relative;
+}
+
+.fp-travel .travel-columns .wp-block-column:after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	box-shadow: inset 0 0 20px 20px white;
+	z-index: 30;
+}
+
+.fp-travel .travel-columns .wp-block-column img {
+	height: 550px;
+	object-position: top;
+	object-fit: cover;
+}
+
+.fp-travel .travel-columns .wp-block-column .wp-block-cover__inner-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 550px;
+}
+
+.fp-travel .travel-columns .wp-block-column .wp-block-cover__inner-container h4 {
+	padding: 0;
+	margin-bottom: 0;
+	width: 100%;
+	display: flex;
+	transition: all 0.35s ease-in-out;
+}
+
+.fp-travel .travel-columns .wp-block-column .wp-block-cover__inner-container h4:hover {
+	background-color: #640D14;
+}
+
+.fp-travel .travel-columns .wp-block-column .wp-block-cover__inner-container h4:hover a {
+	color: white;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+}
+
+.fp-travel .travel-columns .wp-block-column .wp-block-cover__inner-container h4 a {
+	font-size: 45px;
+	padding: 0;
+	margin-bottom: 0;
+	width: 100%;
+	font-family: edwardian-script;
+	text-decoration: none;
+	color: black;
+	transition: all 0.35s ease-in-out;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.fp-about {
+	padding: 0px 0;
+}
+
+.fp-about .wp-block-cover {
+	height: 800px;
+}
+
+.fp-about .wp-block-cover img {
+	height: 800px;
+}
+
+.fp-party {
+	padding: 100px 50px;
+	box-shadow: 9px 1px 20px black;
+}
+
+.fp-party .wp-block-group__inner-container {
+	position: relative;
+	z-index: 25;
+}
+
+.fp-party .wp-block-group__inner-container figure {
+	width: 100%;
+}
+
+.fp-party .wp-block-group__inner-container figure img {
+	width: 100%;
+	object-fit: cover;
+	border: 2px solid white;
+	box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.6);
+}
+
+.fp-bottom figure {
+	margin-top: 0;
 }
 
 /* Comments
